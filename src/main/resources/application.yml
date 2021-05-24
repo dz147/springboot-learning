@@ -1,0 +1,48 @@
+server:
+  servlet:
+    context-path: /api
+  port: 8083
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/coding-dev?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: password
+    dynamic:
+      druid:
+        initial-size: 10
+        max-active: 100
+        max-wait: 60000
+        pool-prepared-statements: true
+        max-pool-prepared-statement-per-connection-size: 20
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 300000
+        #Oracle需要打开注释
+        validation-query: SELECT 1 FROM DUAL
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        stat-view-servlet:
+          enabled: true
+mybatis-plus:
+  type-aliases-package: com.xiaoxiang.springboot.**.entity
+  typeEnumsPackage: com.xiaoxiang.springboot.**.entity.enums
+  configuration:
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+    cache-enabled: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  application:
+    name: shiro-jwt
+fast-code:
+  jwt:
+    enabled: true
+    secret: api-secret
+    expiration: 36000
+    issuer: xiaoxiang
+    audience: minapp
+    expire-second: 36000
+

@@ -1,5 +1,6 @@
 package com.xiaoxiang.springboot.controller;
 
+import com.xiaoxiang.springboot.facet.JdFacet;
 import com.xiaoxiang.springboot.model.ApiResult;
 import com.xiaoxiang.springboot.service.JwtTokenService;
 import com.xiaoxiang.springboot.utils.JwtHeaderUtil;
@@ -23,6 +24,9 @@ public class AppWxController extends ApiController {
     @Resource
     private JwtTokenService tokenService;
 
+    @Resource
+    private JdFacet facet;
+
     @GetMapping("/index")
     public ApiResult<String> index() {
         return success("hello world");
@@ -41,5 +45,11 @@ public class AppWxController extends ApiController {
     @RequiresPermissions(logical = Logical.AND, value = {"user:add"})
     public ApiResult<String> saveUser() {
         return success("保存成功");
+    }
+
+    @GetMapping("/jd")
+    public ApiResult<String> getStockState(@RequestParam String id){
+         //facet.getProductCheck(id);
+         return success("true");
     }
 }

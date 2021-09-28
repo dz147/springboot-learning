@@ -45,4 +45,9 @@ fast-code:
     issuer: xiaoxiang
     audience: minapp
     expire-second: 36000
+  jd-api:
+    username: 小象科技vsp
+    password: xx617109
+    client-id: veTDvP8YeShnJ0f9NfXr
+    client-secret: uGKK4XzRWk9LJiHvBoeN
 

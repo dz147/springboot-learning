@@ -1,7 +1,7 @@
 package com.xiaoxiang.springboot.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.xiaoxiang.springboot.core.entity.BaseEntity;
+import com.xiaoxiang.springboot.core.entity.AbstractEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -15,7 +15,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @TableName("app_user")
-public class AppUser extends BaseEntity {
+public class AppUser extends AbstractEntity {
 
 
     /**

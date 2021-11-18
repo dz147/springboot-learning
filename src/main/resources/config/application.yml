@@ -39,10 +39,9 @@ mybatis-plus:
     name: shiro-jwt
 fast-code:
   swagger:
-    title: API
+    title: 接口文档
     enabled: true
-    api-scans:
-        base-package: com.xiaoxiang.springboot
+    scan-package: com.xiaoxiang.springboot
   jwt:
     enabled: true
     secret: api-secret
@@ -50,9 +49,4 @@ fast-code:
     issuer: xiaoxiang
     audience: minapp
     expire-second: 36000
-  jd-api:
-    username: 小象科技vsp
-    password: xx617109
-    client-id: veTDvP8YeShnJ0f9NfXr
-    client-secret: uGKK4XzRWk9LJiHvBoeN
 

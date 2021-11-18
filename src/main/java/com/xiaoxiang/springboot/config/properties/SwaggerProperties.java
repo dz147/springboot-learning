@@ -41,6 +41,11 @@ public class SwaggerProperties {
     private String version = FastCodeConstant.FAST_CODE_VERSION;
 
     /**
+     * 扫描包
+     * */
+    private String scanPackage;
+
+    /**
      * 联系人参数配置
      */
     @NestedConfigurationProperty

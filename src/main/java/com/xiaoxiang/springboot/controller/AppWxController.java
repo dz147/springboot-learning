@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @RestController
 @RequestMapping("/app")
-@Api(value = "App API", tags = {"微信相关API"})
+@Api(value = "App API", tags = {"用户相关 API"})
 public class AppWxController extends ApiController {
 
     @Resource

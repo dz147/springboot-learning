@@ -4,6 +4,7 @@ import com.xiaoxiang.springboot.facet.JdFacet;
 import com.xiaoxiang.springboot.model.ApiResult;
 import com.xiaoxiang.springboot.service.JwtTokenService;
 import com.xiaoxiang.springboot.utils.JwtHeaderUtil;
+import io.swagger.annotations.*;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @RestController
 @RequestMapping("/app")
+@Api(value = "App API", tags = {"微信相关API"})
 public class AppWxController extends ApiController {
 
     @Resource
@@ -34,6 +36,11 @@ public class AppWxController extends ApiController {
 
 
     @GetMapping("/token")
+    @ApiOperation(value = "获取token")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "phone", required = true, dataType = "String", value = "手机号码")
+    })
+    @ApiResponse(code = 200, message = "操作成功", response = String.class)
     public ApiResult<String> token(@RequestParam String phone, HttpServletResponse response) {
 
         String token = tokenService.generateToken(phone);
@@ -48,8 +55,8 @@ public class AppWxController extends ApiController {
     }
 
     @GetMapping("/jd")
-    public ApiResult<String> getStockState(@RequestParam String id){
-         //facet.getProductCheck(id);
-         return success("true");
+    public ApiResult<String> getStockState(@RequestParam String id) {
+        //facet.getProductCheck(id);
+        return success("true");
     }
 }

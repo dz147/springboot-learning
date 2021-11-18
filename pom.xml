@@ -29,6 +29,7 @@
         <hutool.version>5.4.0</hutool.version>
         <lombok.version>1.18.12</lombok.version>
         <guava.version>29.0-jre</guava.version>
+        <knife4j-spring-boot-starter.version>2.0.4</knife4j-spring-boot-starter.version>
     </properties>
 
         <dependencies>
@@ -142,6 +143,13 @@
                 <scope>provided</scope>
             </dependency>
             <!-- lombok end -->
+            <!-- common tools start -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j-spring-boot-starter.version}</version>
+            </dependency>
+            <!-- common tools end -->
             <!-- google start-->
             <dependency>
                 <groupId>com.google.guava</groupId>

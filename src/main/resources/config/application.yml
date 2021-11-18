@@ -7,7 +7,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/coding-dev?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
-    password: password
+    password: 123456
     dynamic:
       druid:
         initial-size: 10
@@ -38,6 +38,11 @@ mybatis-plus:
   application:
     name: shiro-jwt
 fast-code:
+  swagger:
+    title: API
+    enabled: true
+    api-scans:
+        base-package: com.xiaoxiang.springboot
   jwt:
     enabled: true
     secret: api-secret

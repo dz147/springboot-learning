@@ -6,6 +6,7 @@ import org.springframework.web.cors.CorsConfiguration;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author Stephen
@@ -23,6 +24,45 @@ public class FastCodeConstant {
      */
     public final static String ERROR_KEY = "apiFailure";
 
+    /**
+     * swagger文档标题
+     */
+    public final static String SWAGGER_TITLE = "Fast Code API Documentation";
+
+    /**
+     * swagger项目地址
+     */
+    public final static String SWAGGER_URL = "https://github.com/dandandog";
+
+    /**
+     * swagger项目描述
+     */
+    public final static String SWAGGER_DESCRIPTION = "Documentation for Fast Code API";
+
+    /**
+     * swagger联系人
+     */
+    public final static String SWAGGER_CONTACT_USER = "Johnny";
+
+    /**
+     * swagger联系url
+     */
+    public final static String SWAGGER_CONTACT_URL = "https://github.com/dandandog/fastcode/issues";
+
+    /**
+     * swagger联系邮箱
+     */
+    public final static String SWAGGER_CONTACT_EMAIL = "704365036@qq.com";
+
+    /**
+     * swagger项目证书
+     */
+    public final static String PROJECT_LICENSE = "GNU General Public License v3.0";
+
+    /**
+     * swagger项目证书
+     */
+    public final static String PROJECT_LICENSE_URL = "https://github.com/dandandog/fastcode/master/LICENSE";
 
 
     /**
@@ -45,6 +85,10 @@ public class FastCodeConstant {
      */
     public final static String USER_HOME = System.getProperties().getProperty("user.home");
 
+    /**
+     * 项目版本号
+     */
+    public static final String FAST_CODE_VERSION;
 
     /**
      * 未知版本号
@@ -92,6 +136,61 @@ public class FastCodeConstant {
 
 
     /**
+     * 登入页
+     */
+    public static final String LOGIN_PAGE = "/login";
+
+    /**
+     * 登入失败页
+     */
+    public static final String LOGIN_FAILED_PAGE = "/login?error=true";
+
+    /**
+     * 首页
+     */
+    public static final String INDEX_PAGE = "/index";
+
+    /**
+     * 500页
+     */
+    public static final String ERROR_PAGE = "/error";
+
+    /**
+     * 404页
+     */
+    public static final String NOT_FOUND_PAGE = "/404";
+
+    /**
+     * access页
+     */
+    public static final String ACCESS_PAGE = "/access";
+
+    /**
+     * 注册页
+     */
+    public static final String FORGET_PAGE = "/forget";
+
+    /**
+     * 页面后缀
+     */
+    public static final String PAGE_SUFFIX = "";
+
+    /**
+     * 消息标识前缀
+     */
+    public static final String MESSAGE_CODE_PREFIX = "framework.";
+
+    /**
+     * 消息弹窗
+     */
+    public static final String MESSAGE_DIALOG_WIDGET_VAR = "globalMessageDialog";
+
+    /**
+     * 消息公告
+     */
+    public static final String MESSAGE_GROWL_WIDGET_VAR = "globalMessageGrowl";
+
+    /**
      * 消息公告
      */
     public static final String MESSAGE_DEFAULT_TITLE = "messageTitle";
@@ -122,4 +221,8 @@ public class FastCodeConstant {
      */
     public static final int JWT_TOKEN_REFRESH_COUNTDOWN = 10 * 60;
 
+
+    static {
+        FAST_CODE_VERSION = Optional.ofNullable(FastCodeConstant.class.getPackage().getImplementationVersion()).orElse(UNKNOWN_VERSION);
+    }
 }

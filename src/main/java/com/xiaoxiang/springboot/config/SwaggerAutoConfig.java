@@ -70,7 +70,7 @@ public class SwaggerAutoConfig implements InitializingBean {
     };
 
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() {
         List<SwaggerProperties.ApiScan> apiScans = swaggerProperties.getApiScans();
         log.debug("Swagger Docket registry start ~~~~");
         if (CollUtil.isNotEmpty(apiScans)) {
